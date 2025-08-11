@@ -6,9 +6,11 @@ import org.testng.annotations.Test;
 import baseclass.BaseClass;
 import dataProvider.DataProvider;
 import hooks.Hooks;
+import hooks.Hookss;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.messages.types.Hook;
 import pages.LoginPage;
 
 public class LoginStepDefination extends BaseClass {
@@ -25,8 +27,8 @@ public class LoginStepDefination extends BaseClass {
 	
 	   @When("I log in using Excel credentials")
 	    public void i_log_in_using_excel_credentials() {
-	        String username = Hooks.get("Username");
-	        String password = Hooks.get("Password");
+	        String username = Hookss.get("Username");
+	        String password = Hookss.get("Password");
 	        loginPage.loginWithValidCredential(username, password);
 	    }
 
@@ -43,8 +45,8 @@ public class LoginStepDefination extends BaseClass {
 
 @When("Entered invalid username & password")
 public void entered_invalid_username_password() {
-	String username = Hooks.get("Username");
-    String password = Hooks.get("Password");
+	String username = Hookss.get("Username");
+    String password = Hookss.get("Password");
     System.out.printf(username, password);
    loginMsg = loginPage.loginWithInvalidCredential(username, password);
   System.out.println(loginMsg);

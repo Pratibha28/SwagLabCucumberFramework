@@ -132,4 +132,26 @@ for (int i = 0; i < productListTitle.size(); i++) {
 		return action.isDisplayed(getDriver(), addToCart);
 
 	}
+	
+public void  clickOnProductTitle() {
+		
+		for (int i = 0; i < productListTitle.size(); i++) {
+			if (productListTitle.get(i).getText().equalsIgnoreCase(prop.getProperty("productname"))) {
+
+				if (action.isDisplayed(getDriver(), addToCart)) {
+					System.out.println("i am here##############");
+					System.out.println(productListTitle.get(i));
+
+					System.out.println(productListTitle.get(i).getText());
+
+					action.click(productListTitle.get(i), "productTitle");
+
+				}
+			}
+		}
+		
+		//return new ProductDetailPage();
+	}
+	
+
 }
