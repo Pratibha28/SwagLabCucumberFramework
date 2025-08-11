@@ -17,10 +17,11 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 	@BeforeClass
 	@Parameters("env")
 	public void setEnvirnment(String env) {
-
+     System.out.println("this is for env variable");
 		TestContextSetup.setEnv(env);
 	}
 
+	@SuppressWarnings("deprecation")
 	@BeforeMethod
 	@Parameters("browser")
 	public void setBrowser(String browser) {

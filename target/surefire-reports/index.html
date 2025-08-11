@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Cucumber_Suite" class="navigator-link ">
-                    <span>G:\eclipse-workplace2025\NewSwagLabsCucumbers\testng.xml</span>
+                    <span>G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -136,9 +136,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.25&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [18321394-f96e-4b87-bd2d-6a5b0c7ae8e3, findElement {using=xpath, value=//div[@class=&apos;inventory_details_name&apos;]}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 141.0, moz:accessibilityChecks: false, moz:buildID: 20250717180000, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 21480, moz:profile: C:\Users\Admin\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 18321394-f96e-4b87-bd2d-6a5b0c7ae8e3
+Command: [c4f11ae5-5bdc-4785-b631-bc638a08af8a, findElement {value=//div[@class=&apos;inventory_details_name&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 141.0.3, moz:accessibilityChecks: false, moz:buildID: 20250806102122, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 18792, moz:profile: C:\Users\Admin\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: c4f11ae5-5bdc-4785-b631-bc638a08af8a
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -155,7 +155,7 @@ Session ID: 18321394-f96e-4b87-bd2d-6a5b0c7ae8e3
 	at com.sun.proxy.$Proxy25.getText(Unknown Source)
 	at pages.ProductDetailPage.addTocartProductfromDetail(ProductDetailPage.java:61)
 	at stepDefinations.ProductDetailPageStepDefination.user_is_on_product_list_page_and_click_on_product_name(ProductDetailPageStepDefination.java:23)
-	at ✽.User is on product list page and click on product name(file:///G:/eclipse-workplace2025/NewSwagLabsCucumbers/src/test/java/feature/CartPage.feature:7)
+	at ✽.User is on product list page and click on product name(file:///G:/EclipseCompanyWorkPlace/SwagLabCucumberFramework/src/test/java/feature/CartPage.feature:7)
 ... Removed 4 stack frames
 </div> <!-- stack-trace -->
                   <em>
@@ -167,7 +167,7 @@ Session ID: 18321394-f96e-4b87-bd2d-6a5b0c7ae8e3
         </div> <!-- panel Cucumber_Suite -->
         <div panel-name="test-xml-Cucumber_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">G:\eclipse-workplace2025\NewSwagLabsCucumbers\testng.xml</span>
+            <span class="header-content">G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -230,12 +230,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'runner.TestRunner')
-data.setCell(0, 3, 12593);
+data.setCell(0, 3, 14682);
 window.suiteTableData['Cucumber_Suite']= { tableData: data, tableDiv: 'times-div-Cucumber_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 15 seconds</span>
               <div id="times-div-Cucumber_Suite">
               </div> <!-- times-div-Cucumber_Suite -->
             </div> <!-- times-div -->
@@ -267,22 +267,22 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
-                <span class="method-name">setEnvirnment(staging)</span>
-                <span class="method-start">1127 ms</span>
+                <span class="method-name">setEnvirnment(production)</span>
+                <span class="method-start">1109 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">setBrowser(firefox)</span>
-                <span class="method-start">1145 ms</span>
+                <span class="method-start">1127 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runScenario("Validate that user is on cart page", "Validate the cart page functionality")</span>
-                <span class="method-start">1147 ms</span>
+                <span class="method-start">1129 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">13750 ms</span>
+                <span class="method-start">15822 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
