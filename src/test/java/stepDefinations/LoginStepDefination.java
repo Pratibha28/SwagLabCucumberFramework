@@ -12,16 +12,19 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.messages.types.Hook;
 import pages.LoginPage;
+import utils.ConfigReader;
 
 public class LoginStepDefination extends BaseClass {
+	String actualUrl;
+	String loginErrorMsg;
 	
-	String actualUrl=prop.getProperty("actualUrl");
-	String loginErrorMsg=prop.getProperty("loginmessage");
 	  String loginMsg;
     LoginPage loginPage;
 	@Given("I launch the browser and navigate to the login page")
 	public void i_launch_the_browser_and_navigate_to_the_login_page() {
-		
+		actualUrl=Hookss.get("actual");
+		 loginErrorMsg=Hookss.get("errorMessage");
+		 System.out.println(actualUrl+"%%%%"+loginErrorMsg);
     	loginPage = new LoginPage();
 	}
 	
@@ -29,6 +32,7 @@ public class LoginStepDefination extends BaseClass {
 	    public void i_log_in_using_excel_credentials() {
 	        String username = Hookss.get("Username");
 	        String password = Hookss.get("Password");
+	       
 	        loginPage.loginWithValidCredential(username, password);
 	    }
 
@@ -49,7 +53,7 @@ public void entered_invalid_username_password() {
     String password = Hookss.get("Password");
     System.out.printf(username, password);
    loginMsg = loginPage.loginWithInvalidCredential(username, password);
-  System.out.println(loginMsg);
+  //System.out.println(loginMsg);
 }
 @Then("Validate the error message")
 public void validate_the_error_message() {

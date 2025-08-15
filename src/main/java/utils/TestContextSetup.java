@@ -12,6 +12,8 @@ public class TestContextSetup {
 	private final ScenarioContext scenarioContext = new ScenarioContext();
 	private static ThreadLocal<String> browser = new ThreadLocal<>();
 	private static ThreadLocal<String> envVariable = new ThreadLocal<>();
+	//private static ThreadLocal<String> severity = new ThreadLocal<>();
+	private static ThreadLocal<String> bugId = new ThreadLocal<>();
 
 	public WebDriver driver;
 	public ProductPage productPage;
@@ -38,18 +40,44 @@ public class TestContextSetup {
 	public static String getBrowser() {
 		return browser.get();
 	}
-	
+
 	public static void setEnv(String env) {
-		
+
 		envVariable.set(env);
 	}
 
 	public static String getEnv() {
-		
+
 		return envVariable.get();
 	}
 
 	public static void clear() {
 		browser.remove();
+
+		// browser.remove();
+		envVariable.remove();
+		//severity.remove();
+		bugId.remove();
+
 	}
+
+	private static String severity;
+
+	public static void setSeverity(String sev) {
+	    System.out.println("Setting severity: " + sev);
+	    severity = sev;
+	}
+
+	public static String getSeverity() {
+	    System.out.println("Getting severity: " + severity);
+	    return severity;
+	}
+	public static void setBugId(String bug) {
+		bugId.set(bug);
+	}
+
+	public static String getBugId() {
+		return bugId.get();
+	}
+
 }

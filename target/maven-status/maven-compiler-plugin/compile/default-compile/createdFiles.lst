@@ -1,7 +1,9 @@
 pages\ProductPage.class
+utils\CustomListener.class
 pages\LoginPage.class
 pages\CartPage.class
 utils\TestContextSetup.class
+utils\ExtentReportManager.class
 dataProvider\DataProviders.class
 utils\ConfigReader.class
 baseclass\BaseTest.class
@@ -10,4 +12,6 @@ utils\ExcelLibrary.class
 baseclass\BaseClass.class
 dataProvider\DataProvider.class
 utils\ScenarioContext.class
+pojo\BugDetails.class
+utils\ScreenshotUtil.class
 pages\ProductDetailPage.class

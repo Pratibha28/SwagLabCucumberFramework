@@ -19,12 +19,21 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.ConfigReader;
 
 public class BaseClass {
-
+	String mavenEnv = System.getProperty("env");
 //	Write a Test Script to automate www.saucedemo.com using Page Object Model
 //	● Create Maven Project
 //	● Use TestNG
 //	● Create Repository in Class File
-
+public BaseClass() {
+	
+	try {
+		loadConfig(mavenEnv);
+		System.out.println("@@@@0"+mavenEnv);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
 	public static Properties prop;
 	// Declare ThreadLocal Driver
 	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<RemoteWebDriver>();
@@ -32,7 +41,7 @@ public class BaseClass {
 	@BeforeSuite
 	public void loadConfig(String finalEnvs) throws IOException {
 
-		String mavenEnv = System.getProperty("env");
+		
 		String finalEnv = (mavenEnv != null && !mavenEnv.isEmpty()) ? mavenEnv : finalEnvs;
 
 		if (finalEnv == null || finalEnv.isEmpty()) {

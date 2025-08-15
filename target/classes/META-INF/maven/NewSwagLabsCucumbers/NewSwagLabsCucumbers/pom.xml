@@ -36,11 +36,7 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.2.4</version>
 		</dependency>
-		<dependency>
-			<groupId>io.github.bonigarcia</groupId>
-			<artifactId>webdrivermanager</artifactId>
-			<version>5.6.3</version>
-		</dependency>
+		
 
 		<!-- Cucumber core -->
 		<dependency>
@@ -73,7 +69,11 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.6.3</version> <!-- or your preferred version -->
 		</dependency>
-
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.9</version>  <!-- Check for latest version -->
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -88,7 +88,7 @@
 						TestNG XML -->
 					</suiteXmlFiles>
 					<systemPropertyVariables>
-						<env>${env}</env> <!-- This allows Maven to pass -Denv -->
+						<env>qa</env> <!-- This allows Maven to pass -Denv -->
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>

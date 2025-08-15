@@ -7,7 +7,11 @@ G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\pages\CartPage
 G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\pages\LoginPage.java
 G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\pages\ProductDetailPage.java
 G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\pages\ProductPage.java
+G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\pojo\BugDetails.java
 G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\utils\ConfigReader.java
+G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\utils\CustomListener.java
 G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\utils\ExcelLibrary.java
+G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\utils\ExtentReportManager.java
 G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\utils\ScenarioContext.java
+G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\utils\ScreenshotUtil.java
 G:\EclipseCompanyWorkPlace\SwagLabCucumberFramework\src\main\java\utils\TestContextSetup.java

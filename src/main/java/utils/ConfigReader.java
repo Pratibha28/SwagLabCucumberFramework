@@ -25,8 +25,15 @@ System.out.println("i am executed");
 	}
 
 	public static String getProperties(String key) {
-		System.out.println(key);
-System.out.println(prop.getProperty(key));
-		return prop.getProperty(key);
+		 System.out.println("Key requested: " + key);
+
+		    if (prop == null) {
+		        System.err.println("ERROR: Properties object 'prop' is null. Make sure to load properties before calling getProperties.");
+		        return null;  // or throw an exception if you want
+		    }
+
+		    String value = prop.getProperty(key);
+		    System.out.println("Value: " + value);
+		    return value;
 	}
 }

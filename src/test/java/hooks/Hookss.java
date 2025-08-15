@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
+import org.openqa.selenium.remote.tracing.Tags;
+
 import dataProvider.DataProvider;
 import dataProvider.DataProviders;
 import io.cucumber.java.After;
@@ -16,16 +18,35 @@ public class Hookss extends BaseClass {
 	private static ThreadLocal<Map<String, String>> currentCreds = new ThreadLocal<>();
     private static ThreadLocal<Map<String, String>> loginCreds = new ThreadLocal<>();
     
+    
+    
+    
     @Before
     public void setUp(Scenario scenario) throws Exception {
+    	Collection<String> tags = scenario.getSourceTagNames();
+    	String sev = "Normal"; // default
+    	String bug = "None";   // default
 
-        // ✅ Get env and browser from context
-        String env = TestContextSetup.getEnv();
-        if (env == null || env.trim().isEmpty()) {
-        	System.out.println("env is not get from testng xml");
-            env = "qa"; // default fallback
-        }
-        loadConfig(env);
+    	for (String tag : tags) {
+    	    if (tag.equalsIgnoreCase("@critical") || tag.equalsIgnoreCase("@severity.critical")) {
+    	        sev = "Critical";
+    	    } else if (tag.equalsIgnoreCase("@major") || tag.equalsIgnoreCase("@severity.major")) {
+    	        sev = "Major";
+    	    }
+
+    	    if (tag.startsWith("@bug.")) {
+    	        bug = tag.substring("@bug.".length());
+    	    }
+    	}
+    	
+
+    	// Set in TestContextSetup so other classes (like listeners) can access
+    	TestContextSetup.setSeverity(sev);
+    	TestContextSetup.setBugId(bug);
+    	
+    	
+    	
+
     	
     	String browser = TestContextSetup.getBrowser();
         if (browser == null || browser.trim().isEmpty()) {
@@ -34,7 +55,7 @@ public class Hookss extends BaseClass {
         System.out.println("Running test in browser: " + browser);
         launchApp(browser);
 
-        Collection<String> tags = scenario.getSourceTagNames();
+        
         String featureSheet = getSheetNameFromTags(tags);
 
         // 1. Functional Sheet (Product, Cart, Checkout, etc.)
