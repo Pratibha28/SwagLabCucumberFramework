@@ -4,7 +4,7 @@ Feature: Login functionality
     Given I launch the browser and navigate to the login page
     
     
-@sheet=Credentials @login
+@sheet=Credentials  @login
    Scenario: Test login with multiple credentials
     When I log in using Excel credentials
     Then I validate the login result

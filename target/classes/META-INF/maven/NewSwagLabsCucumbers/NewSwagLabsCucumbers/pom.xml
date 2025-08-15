@@ -88,7 +88,9 @@
 						TestNG XML -->
 					</suiteXmlFiles>
 					<systemPropertyVariables>
-						<env>${env}</env> <!-- This allows Maven to pass -Denv -->
+						<!-- <env>${env}</env> -->
+						<env>qa</env> <!-- This allows Maven to pass -Denv -->
+
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
