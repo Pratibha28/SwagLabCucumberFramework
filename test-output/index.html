@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Cucumber_Suite" class="navigator-link">
-              <span class="suite-name border-failed">Cucumber Suite</span>
+              <span class="suite-name border-passed">Cucumber Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,30 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
+<<<<<<< HEAD
                     <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+=======
+                    <span class="method-stats">2 methods,   2 passed</span>
+>>>>>>> ef7c2522505d1d780f603c2bec9a02e229baa338
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Cucumber_Suite" class="hide-methods failed suite-Cucumber_Suite"> (hide)</a> <!-- hide-methods failed suite-Cucumber_Suite -->
-                      <a href="#" panel-name="suite-Cucumber_Suite" class="show-methods failed suite-Cucumber_Suite"> (show)</a> <!-- show-methods failed suite-Cucumber_Suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Cucumber_Suite" class="hide-methods passed suite-Cucumber_Suite"> (hide)</a> <!-- hide-methods passed suite-Cucumber_Suite -->
+                      <a href="#" panel-name="suite-Cucumber_Suite" class="show-methods passed suite-Cucumber_Suite"> (show)</a> <!-- show-methods passed suite-Cucumber_Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Cucumber_Suite">
+                    <div class="method-list-content passed suite-Cucumber_Suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Cucumber_Suite" title="runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Validate that user is on cart page&quot;, &quot;Validate the cart page functionality&quot;)">runScenario("Validate that user is on cart page", "Validate the cart page functionality")</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Cucumber_Suite" title="runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Test login with multiple credentials&quot;, &quot;Login functionality&quot;)">runScenario("Test login with multiple credentials", "Login functionality")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Cucumber_Suite -->
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Cucumber_Suite" title="runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Test login with invalid crdential&quot;, &quot;Login functionality&quot;)">runScenario("Test login with invalid crdential", "Login functionality")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Cucumber_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -138,17 +147,18 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Cucumber_Suite" class="panel Cucumber_Suite">
-          <div class="suite-Cucumber_Suite-class-failed">
+          <div class="suite-Cucumber_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">runner.TestRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Validate that user is on cart page&quot;, &quot;Validate the cart page functionality&quot;)">
-                  </a> <!-- runScenario("Validate that user is on cart page", "Validate the cart page functionality") -->
+                  <a name="runScenario(&quot;Test login with multiple credentials&quot;, &quot;Login functionality&quot;)">
+                  </a> <!-- runScenario("Test login with multiple credentials", "Login functionality") -->
                   <span class="method-name">runScenario</span>
+<<<<<<< HEAD
                   <span class="parameters">("Validate that user is on cart page", "Validate the cart page functionality")</span>
                   <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: //div[@class=&apos;inventory_details_name&apos;]
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
@@ -177,11 +187,25 @@ Session ID: 484fc41a-facb-4d50-a103-7c1de37abd3c
 	at ✽.User is on product list page and click on product name(file:///G:/EclipseCompanyWorkPlace/SwagLabCucumberFramework/src/test/java/feature/CartPage.feature:7)
 ... Removed 3 stack frames
 </div> <!-- stack-trace -->
+=======
+                  <span class="parameters">("Test login with multiple credentials", "Login functionality")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Test login with invalid crdential&quot;, &quot;Login functionality&quot;)">
+                  </a> <!-- runScenario("Test login with invalid crdential", "Login functionality") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Test login with invalid crdential", "Login functionality")</span>
+>>>>>>> ef7c2522505d1d780f603c2bec9a02e229baa338
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
+<<<<<<< HEAD
           </div> <!-- suite-Cucumber_Suite-class-failed -->
           <div class="suite-Cucumber_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
@@ -210,6 +234,8 @@ Session ID: 484fc41a-facb-4d50-a103-7c1de37abd3c
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
+=======
+>>>>>>> ef7c2522505d1d780f603c2bec9a02e229baa338
           </div> <!-- suite-Cucumber_Suite-class-passed -->
         </div> <!-- panel Cucumber_Suite -->
         <div panel-name="test-xml-Cucumber_Suite" class="panel">
@@ -276,6 +302,7 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
+<<<<<<< HEAD
 data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
@@ -289,11 +316,26 @@ data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
 data.setCell(2, 2, 'runner.TestRunner')
 data.setCell(2, 3, 9513);
+=======
+data.addRows(2);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'runScenario')
+data.setCell(0, 2, 'runner.TestRunner')
+data.setCell(0, 3, 19067);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'runScenario')
+data.setCell(1, 2, 'runner.TestRunner')
+data.setCell(1, 3, 9671);
+>>>>>>> ef7c2522505d1d780f603c2bec9a02e229baa338
 window.suiteTableData['Cucumber_Suite']= { tableData: data, tableDiv: 'times-div-Cucumber_Suite'}
 return data;
 }
               </script>
+<<<<<<< HEAD
               <span class="suite-total-time">Total running time: 34 seconds</span>
+=======
+              <span class="suite-total-time">Total running time: 30 seconds</span>
+>>>>>>> ef7c2522505d1d780f603c2bec9a02e229baa338
               <div id="times-div-Cucumber_Suite">
               </div> <!-- times-div-Cucumber_Suite -->
             </div> <!-- times-div -->
@@ -321,11 +363,16 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">runner.TestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
+<<<<<<< HEAD
                 <span class="method-name">setUpClass(org.testng.TestRunner@1e81f160)</span>
+=======
+                <span class="method-name">setUpClass(org.testng.TestRunner@3541cb24)</span>
+>>>>>>> ef7c2522505d1d780f603c2bec9a02e229baa338
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">setEnvirnment(qa)</span>
+<<<<<<< HEAD
                 <span class="method-start">492 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
@@ -357,6 +404,29 @@ return data;
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
                 <span class="method-start">34197 ms</span>
+=======
+                <span class="method-start">1229 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">setBrowser(firefox)</span>
+                <span class="method-start">1249 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Test login with multiple credentials", "Login functionality")</span>
+                <span class="method-start">1251 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setBrowser(firefox)</span>
+                <span class="method-start">20323 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Test login with invalid crdential", "Login functionality")</span>
+                <span class="method-start">20323 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">29999 ms</span>
+>>>>>>> ef7c2522505d1d780f603c2bec9a02e229baa338
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -7,31 +7,35 @@ import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.TimeoutException; // make sure it's Selenium's
 
 import baseclass.BaseClass;
 
 public class ActionDriver extends BaseClass {
 
-	
-	
-	public boolean waitForElementToDisappear(By element){
-	    
-			WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+	public boolean waitForElementToDisappear(By element) {
 
-	        wait.until((ExpectedConditions.invisibilityOfElementLocated(element)));
-	        return true;
-	    
+		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+
+		wait.until((ExpectedConditions.invisibilityOfElementLocated(element)));
+		return true;
+
 	}
-	
 
 	public boolean type(WebElement ele, String text) {
 		boolean flag = false;
@@ -46,7 +50,7 @@ public class ActionDriver extends BaseClass {
 			flag = false;
 		} finally {
 			if (flag) {
-				//System.out.println("Successfully entered value");
+				// System.out.println("Successfully entered value");
 			} else {
 				System.out.println("Unable to enter value");
 			}
@@ -66,7 +70,7 @@ public class ActionDriver extends BaseClass {
 			return false;
 		} finally {
 			if (flag) {
-				//System.out.println("Able to click on \"" + locatorName + "\"");
+				// System.out.println("Able to click on \"" + locatorName + "\"");
 			} else {
 				System.out.println("Click Unable to click on \"" + locatorName + "\"");
 			}
@@ -87,7 +91,7 @@ public class ActionDriver extends BaseClass {
 	public boolean visibilityOfElement(WebDriver driver, WebElement element, int timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(element));
-		
+
 		return true;
 	}
 
@@ -108,7 +112,7 @@ public class ActionDriver extends BaseClass {
 			}
 		}
 	}
-	
+
 	public boolean findElement(WebDriver driver, WebElement ele) {
 		boolean flag = false;
 		try {
@@ -131,7 +135,7 @@ public class ActionDriver extends BaseClass {
 	public boolean isDisplayed(WebDriver driver, WebElement ele) {
 		boolean flag = false;
 		flag = findElement(driver, ele);
-		
+
 		try {
 			if (flag) {
 				flag = ele.isDisplayed();
@@ -141,79 +145,87 @@ public class ActionDriver extends BaseClass {
 					System.out.println("The element is not Displayed");
 				}
 			}
-			
-		}catch(NoSuchElementException e){
-		
-		
+
+		} catch (NoSuchElementException e) {
+
 			System.out.println("Not displayed ");
-	
+
 		}
 		return flag;
 	}
-	
-	
+
 	public String screenShot(WebDriver driver, String filename) {
-		
-		String dateName= new SimpleDateFormat("ddMMyyyyhhmmss").format(new Date());
-		TakesScreenshot takeScreenShot= (TakesScreenshot) driver;
-		File source= takeScreenShot.getScreenshotAs(OutputType.FILE);
-		String destination= System.getProperty("user.dir")+ "\\Screenshots\\" +filename+ "_" + dateName + ".png";
-		
+
+		String dateName = new SimpleDateFormat("ddMMyyyyhhmmss").format(new Date());
+		TakesScreenshot takeScreenShot = (TakesScreenshot) driver;
+		File source = takeScreenShot.getScreenshotAs(OutputType.FILE);
+		String destination = System.getProperty("user.dir") + "\\Screenshots\\" + filename + "_" + dateName + ".png";
+
 		try {
 			FileUtils.copyFile(source, new File(destination));
 		} catch (Exception e) {
-			
+
 			e.getMessage();
 		}
-		
-		
+
 		return destination;
-		
+
 	}
-	
-	
-public boolean validateExpectedURL(String url) {
-	  WebDriverWait wait= new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+
+	public boolean validateExpectedURL(String url) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
 		return wait.until(ExpectedConditions.urlToBe(url));
-		
-	}
-	
-	public Boolean   visibilityOfElementLocated(By element) {
-		  WebDriverWait wait= new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
-		  return wait.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed();
 	}
-	
-	public Boolean   visibilityOfWebElementLocated(WebElement element) {
-		  WebDriverWait wait= new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
-		  return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
+	public Boolean visibilityOfElementLocated(By element) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed();
 	}
-	
-	
-	public List<WebElement> ListOfWebelement(By element){
-		
-		List<WebElement> list= getDriver().findElements(element);
+
+	public Boolean visibilityOfWebElementLocated(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+
+		return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
+	}
+
+	public List<WebElement> ListOfWebelement(By element) {
+
+		List<WebElement> list = getDriver().findElements(element);
 		return null;
-		
-		
+
 	}
-	
+
 	public void acceptAlertMethod() {
 		if (getDriver() == null) {
-	        System.out.println("Driver is null!");
-	        return;
-	    }
-	    getDriver().switchTo().alert().accept();
+			System.out.println("Driver is null!");
+			return;
+		}
+		getDriver().switchTo().alert().accept();
 
-		
 	}
-	
-	
-	
-	
-	
-	
-	
+
+	public void fluientWait(int time, WebElement element) {
+
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver()).withTimeout(Duration.ofSeconds(10))
+				.pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOf(element));
+
+	}
+
+	public <T>T genericFluientwait(int time, ExpectedCondition<T> condition) {
+		try {
+			Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver()).withTimeout(Duration.ofSeconds(time))
+					.pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class)
+					.ignoring(StaleElementReferenceException.class).ignoring(ElementClickInterceptedException.class);
+
+			return wait.until(condition);
+		} catch (TimeoutException e) {
+			System.err.println("❌ Timeout after " + time + " seconds for condition: " + condition);
+
+			return null;
+		}
+	}
 }

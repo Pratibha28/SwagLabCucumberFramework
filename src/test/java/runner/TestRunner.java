@@ -17,7 +17,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 	@BeforeClass
 	@Parameters("env")
 	public void setEnvirnment(String env) {
-     System.out.println("this is for env variable");
+     System.out.println("this is for env	 variable");
 		TestContextSetup.setEnv(env);
 	}
 
