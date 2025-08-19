@@ -9,14 +9,20 @@
         </classes>
     </test>-->
 
-	<test name="FirefoxTests">
+	<test name="MainRun">
 		<parameter name="env" value="production" />
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="runner.TestRunner" />
 		</classes>
 	</test>
-
+    <test name="FlakyRun">
+		<parameter name="env" value="production" />
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="runner.FlakyTestRunner" />
+		</classes>
+	</test>
 	<!-- <test name="IETets">
         <parameter name="browser" value="IE"/>
         <classes>

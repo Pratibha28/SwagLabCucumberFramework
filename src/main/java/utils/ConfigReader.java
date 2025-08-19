@@ -10,12 +10,14 @@ public class ConfigReader {
 	private static Properties prop;
 
 	public static Properties loadProperties(String env) {
-System.out.println("i am executed");
+		System.out.println("i am executed");
 		prop = new Properties();
 		try {
-			FileInputStream file = new FileInputStream("G:/eclipse-workplace2025/NewSwagLabsCucumbers/src/test/resources/config." + env + ".properties");
-			//FileInputStream file = new FileInputStream("G:\\eclipse-workplace2025\\NewSwagLabsCucumbers\\src\\test\\resources\\config.qa.properties");
-             prop.load(file);
+			FileInputStream file = new FileInputStream(
+					"G:/eclipse-workplace2025/NewSwagLabsCucumbers/src/test/resources/config." + env + ".properties");
+			// FileInputStream file = new
+			// FileInputStream("G:\\eclipse-workplace2025\\NewSwagLabsCucumbers\\src\\test\\resources\\config.qa.properties");
+			prop.load(file);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println("file not found");

@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 2, Time elapsed: 1.698 s <<< FAILURE! - in TestSuite
+runner.TestRunner.setUpClass[org.testng.TestRunner@41aae454](0)  Time elapsed: 1.151 s  <<< FAILURE!
+java.lang.IllegalArgumentException: Invalid tag expression at 'runner.TestRunner'
+Caused by: io.cucumber.tagexpressions.TagExpressionException: Tag expression "@login, @cart" could not be parsed because of syntax error: Expected operator.
+
+runner.FlakyTestRunner.setUpClass[org.testng.TestRunner@341c0977](0)  Time elapsed: 1.342 s  <<< FAILURE!
+java.lang.RuntimeException: java.nio.file.NoSuchFileException: target\rerun.txt
+Caused by: java.nio.file.NoSuchFileException: target\rerun.txt
+

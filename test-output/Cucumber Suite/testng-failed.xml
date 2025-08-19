@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="1" parallel="tests" name="Failed suite [Cucumber Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="1" parallel="tests" name="FirefoxTests(failed)">
+  <test thread-count="1" parallel="tests" name="MainRun(failed)">
     <parameter name="browser" value="firefox"/>
     <parameter name="env" value="production"/>
     <classes>
@@ -15,5 +15,19 @@
         </methods>
       </class> <!-- runner.TestRunner -->
     </classes>
-  </test> <!-- FirefoxTests(failed) -->
+  </test> <!-- MainRun(failed) -->
+  <test thread-count="1" parallel="tests" name="FlakyRun(failed)">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="env" value="production"/>
+    <classes>
+      <class name="runner.FlakyTestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="setBrowser"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- runner.FlakyTestRunner -->
+    </classes>
+  </test> <!-- FlakyRun(failed) -->
 </suite> <!-- Failed suite [Cucumber Suite] -->

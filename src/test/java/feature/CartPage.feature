@@ -6,7 +6,7 @@ Background:
    When I log in using Excel credentials
    And  User is on product list page and click on product name
    
-  @cart
+  @cart @flaky
    Scenario: Validate that user is on cart page
    When open cart page from product detail
    Then Validate that cart page is get open
