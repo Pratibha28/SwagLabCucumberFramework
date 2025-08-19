@@ -11,7 +11,7 @@ import utils.TestContextSetup;
 
 @CucumberOptions(features = "src/test/java/feature", glue = { "stepDefinations", "hooks", "dataProvider" }, plugin = {
 		"pretty",
-		"html:target/cucumber.html","rerun:target/rerun.txt" }, monochrome = true, tags = "@login, @cart", dryRun = false)
+		"html:target/cucumber.html","rerun:target/rerun.txt" }, monochrome = true, tags = "@login or @cart", dryRun = false)
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 	@BeforeClass
