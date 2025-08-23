@@ -11,7 +11,7 @@ import utils.TestContextSetup;
 
 @CucumberOptions(features = "src/test/java/feature", glue = { "stepDefinations", "hooks", "dataProvider" }, plugin = {
 		"pretty"
-		 }, monochrome = true, tags = " @cart or @login", dryRun = false)
+		 }, monochrome = true, tags = "  @login", dryRun = false)
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 	@BeforeClass
